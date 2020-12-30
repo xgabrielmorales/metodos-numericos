@@ -18,12 +18,13 @@ void Newton(int n_0, double p_0, double tol){
 	while (i <= n_0){
 		p = p_0 - f(p_0) / fp(p_0);
 		if (fabs(p - p_0) < tol){
-			printf("Result: %lf\n", p);
+			printf("p = %lf\n", p);
 			return;
 		}
 		i++;
 		p_0 = p;
 	}
+	printf("The method failed after %d iterations.", n_0);
 	return;
 }
 
