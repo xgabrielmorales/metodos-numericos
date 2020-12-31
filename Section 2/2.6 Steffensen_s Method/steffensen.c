@@ -7,8 +7,8 @@ double g(double p){
 	return cos(p);
 }
 
-void Steffensen(double p, int n, double tol){
-	double p_0, p_1, p_2;
+void Steffensen(double p_0, int n, double tol){
+	double p, p_1, p_2;
 	int i = 1;
 
 	while (i < n){
@@ -32,10 +32,10 @@ void Steffensen(double p, int n, double tol){
 int main(){
 	/* === INSERT DATA HERE === */
 	int n = 50;
-	double p = 0;
+	double p_0 = 0;
 	double tol = pow(10, -6);
 
 	/* === Calculate === */
-	Steffensen(p, n, tol);
+	Steffensen(p_0, n, tol);
 	return 0;
 }
