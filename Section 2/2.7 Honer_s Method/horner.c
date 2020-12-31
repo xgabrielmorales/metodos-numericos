@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void Horner(int n, double *a, double x_0){
-	double y = a[n];
-	double z = a[n];
+int *Horner(int n, int *a, int x_0){
+	int y = a[n];
+	int z = a[n];
 
 	for(int j=n-1; j>0; j--){
 		y = (x_0 * y) + a[j];
@@ -12,20 +12,25 @@ void Horner(int n, double *a, double x_0){
 
 	y = (x_0 * y) + a[0];
 
-	printf("y = %lf\tz = %lf\n", y, z);
-	return;
+	int *r = malloc(2 * sizeof(int));
+	r[0] = y, r[1] = z;
+
+	return r;
 }
 
 int main(){
 	/* === INSERT DATA HERE === */
 
 	// Polynomial: 2x^4 - 3x^2 + 3x^1 - 4
-	double a[] = {-4, 3, -3, 0, 2};
-	double x_0 = -2;
-	int n = 5;
+	int a[] = {-4, 3, -3, 0, 2};
+	int x_0 = -2;
+	int n = 4;
 
 	/* === Calculate === */
-	Horner(n, a, x_0);
+	int *p = Horner(n, a, x_0);
 
+	printf("y = %d, z = %d", p[0], p[1]);
+
+	free(p);
 	return 0;
 }
