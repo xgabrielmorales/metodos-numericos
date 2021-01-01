@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
 
 double g(double p){
-	/* === Define the fuction to use ===*/
-	return cos(p);
+	/* === DEFINE THE FUCTION TO USE ===*/
+	return 0;
 }
 
-void Steffensen(double p_0, int n, double tol){
+double Steffensen(double p_0, int n, double tol){
 	double p, p_1, p_2;
 	int i = 1;
 
@@ -16,26 +15,23 @@ void Steffensen(double p_0, int n, double tol){
 		p_2= g(p_1);
 		p = p_0 - ( pow(p_1-p_0, 2) / (p_2 - 2*p_1 + p_0) );
 
-		if (fabs(p - p_0) < tol){
-			printf("%f\n", p);
-			exit(0);
-		}
+		if (fabs(p - p_0) < tol)
+			return p;
 
 		p_0 = p;
 		i++;
 	}
-
 	printf("Method failed after %d iterations", n);
-	return;
 }
 
 int main(){
 	/* === INSERT DATA HERE === */
-	int n = 50;
-	double p_0 = 0;
-	double tol = pow(10, -6);
+	int n;
+	double p_0;
+	double tol;
 
-	/* === Calculate === */
-	Steffensen(p_0, n, tol);
+	/* === CALCULATE === */
+	double r = Steffensen(p_0, n, tol);
+	printf("%lf\n", r);
 	return 0;
 }
