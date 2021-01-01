@@ -1,36 +1,35 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
 
 double g(double p){
-	/* === Define the fuction to use ===*/
-	return cos(p);
+	/* === DEFINE THE FUCTION TO USE ===*/
+	return 0;
 }
 
-void FixedPoint(double p_0, int n, double tol){
+double FixedPoint(double p_0, int n, double tol){
 	double p, i = 1;
 
 	while (i < n){
 		p = g(p_0);
 
 		if (fabs(p - p_0) < tol){
-			printf("%f\n", p);
-			exit(0);
+			return p;
 		}
 		i = i + 1;
 		p_0 = p;
 	}
-
-	printf("El metodo ha fallado después de %d iteraciones.");
+	printf("The method failed after %d iterations.\n", n);
 }
 
 int main(){
 	/* === INSERT DATA HERE === */
-	int n = 100;
-	double p_0 = 0;
-	double tol = pow(10, -6);
+	int n;
+	double p_0;
+	double tol;
 
-	/* === Calculate the fixed point === */
-	FixedPoint(p_0, n, tol);
+	/* === CALCULATE THE FIXED POINT === */
+	double r = FixedPoint(p_0, n, tol);
+	printf("%lf\n", r);
+
 	return 0;
 }
