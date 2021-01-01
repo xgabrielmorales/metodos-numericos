@@ -1,4 +1,4 @@
-# STEFFENSEN'S METHOD
+# HORNER'S METHOD
 
 # Input
 # n:    Degree of the polynomial
@@ -6,9 +6,9 @@
 # x_0:
 
 # Output
-# y = P(x_0); z = P'(x_0)
+# [P(x_0), P'(x_0)]
 
-function horner(n, a, x_0)
+function r = horner(n, a, x_0)
 	y = a(n+1);
 	z = a(n+1);
 
@@ -18,5 +18,6 @@ function horner(n, a, x_0)
 	endfor
 
 	y = (x_0 * y) + a(1);
-	printf("y = %f\tz = %f\n", y, z);
+
+	r = [ y z ];
 endfunction

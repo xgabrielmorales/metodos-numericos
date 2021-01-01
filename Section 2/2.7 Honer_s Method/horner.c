@@ -26,9 +26,8 @@ int main(){
 	int x_0 = -2;
 	int n = 4;
 
-	/* === Calculate === */
+	/* === CALCULATE === */
 	int *p = Horner(n, a, x_0);
-
 	printf("y = %d, z = %d", p[0], p[1]);
 
 	free(p);
