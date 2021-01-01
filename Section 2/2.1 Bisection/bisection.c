@@ -1,27 +1,23 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
 
 double f(double x){
-	/* === Define the fuction to use ===*/
-	return cos(x) - x;
+	/* === DEFINE THE FUCTION TO USE ===*/
+	return 0;
 }
 
-void Bisection(double a, double b, int n, double tol){
+double Bisection(double a, double b, int n, double tol){
 	double p;
 	double f_de_a = f(a);
 	double f_de_p;
 
 	int i = 1;
-
 	while (i <= n){
 		p = a + (b - a) / 2;
 		f_de_p = f(p);
 
-		if (f_de_p == 0 || ((b-a)/2) < tol){
-			printf("%f\n", p);
-			exit(0);
-		}
+		if (f_de_p == 0 || ((b-a)/2) < tol)
+			return p;
 
 		if( (f_de_a * f_de_p) > 0 ){
 			a = p;
@@ -32,19 +28,19 @@ void Bisection(double a, double b, int n, double tol){
 
 		i++;
 	}
-
-	printf("Algo salio mal..\n");
-	printf("Revisa tus datos de entrada\n");
+	printf("The method failed after %d iterations.\n", n);
 }
 
 int main(){
 	/* === INSERT DATA HERE === */
-	int n = 50;
-	double a = 0, b = 5;
-	double tol = pow(10, -6);
+	int n;
+	double a;
+	double b;
+	double tol;
 
-	/* === Calculate the bisection === */
-	Bisection(a, b, n, tol);
+	/* === CALCULATE THE BISECTION === */
+	double r = Bisection(a, b, n, tol);
+	printf("%lf\n", r);
 
 	return 0;
 }
