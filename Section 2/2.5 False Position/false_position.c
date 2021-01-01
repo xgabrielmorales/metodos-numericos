@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
 
 double f(double x){
-	/* === Define the fuction to use ===*/
-	return cos(x) - x;
+	/* === DEFINE THE FUCTION TO USE ===*/
+	return 0;
 }
 
-void FalsePosition(double p_0, double p_1, int n, double tol){
+double FalsePosition(double p_0, double p_1, int n, double tol){
 	double p, q;
 	double q_0 = f(p_0);
 	double q_1 = f(p_1);
@@ -16,10 +15,8 @@ void FalsePosition(double p_0, double p_1, int n, double tol){
 	while (i < n){
 		p = p_1 - (q_1 * (p_1 - p_0) / (q_1 - q_0));
 
-		if (fabs(p - p_1) < tol){
-			printf("%.7f\n", p);
-			exit(0);
-		}
+		if (fabs(p - p_1) < tol)
+			return p;
 
 		i++;
 		q = f(p);
@@ -32,19 +29,18 @@ void FalsePosition(double p_0, double p_1, int n, double tol){
 		p_1 = p;
 		q_1 = q;
 	}
-
 	printf("The method failed after %d iterations.\n", n);
-	return;
 }
 
 int main(){
 	/* === INSERT DATA HERE === */
-	double n = 100;
-	double p_0 = 0.5;
-	double p_1 = 1;
-	double tol = pow(10, -6);
+	double n;
+	double p_0;
+	double p_1;
+	double tol;
 
-	/* === Calculate === */
-	FalsePosition(p_0, p_1, n, tol);
+	/* === CALCULATE === */
+	double r = FalsePosition(p_0, p_1, n, tol);
+	printf("%lf\n", r);
 	return 0;
 }
