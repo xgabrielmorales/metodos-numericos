@@ -24,6 +24,7 @@ double Neville(int n, double x, double *xr, double *f){
 
 	double r = Q[n][n];
 
+	while(n+1) free(Q[--n+1]);
 	free(Q);
 
 	return r;
