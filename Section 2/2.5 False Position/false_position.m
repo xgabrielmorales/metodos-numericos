@@ -1,14 +1,3 @@
-# FALSE POSITION METHOD
-
-# Input
-# f(x):     Function to use
-# p_0, p_1: Initial approximations
-# n:        Maximum number of iterations
-# tol:      Maximum tolerated error
-
-# Output
-# Approximate solution p or message of failure.
-
 function r = falseposition(f, p_0, p_1, n, tol)
 	q_0 = f(p_0);
 	q_1 = f(p_1);

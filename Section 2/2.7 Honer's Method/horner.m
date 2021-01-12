@@ -1,13 +1,3 @@
-# HORNER'S METHOD
-
-# Input
-# n:    Degree of the polynomial
-# a[]:  Coefficients of the polinomial
-# x_0:
-
-# Output
-# [P(x_0), P'(x_0)]
-
 function r = horner(n, a, x_0)
 	y = a(n+1);
 	z = a(n+1);

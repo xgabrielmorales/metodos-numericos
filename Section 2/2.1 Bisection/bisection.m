@@ -1,14 +1,3 @@
-# BISECTION METHOD
-
-# Input
-# f(x): Function to use
-# a, b: Enpoints
-# n:    Maximum number of iterations
-# tol:  Maximum tolerated error
-
-# Output
-# Approximate solution p or message of failure.
-
 function r = bisection(f, a, b, n, tol)
 	f_de_a = f(a);
 

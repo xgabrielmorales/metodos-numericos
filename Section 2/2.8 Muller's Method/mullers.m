@@ -1,14 +1,3 @@
-# MULLER'S METHOD
-
-# Input
-# f(x):          Function
-# p_0, p_1, p_2: Initial approximations
-# n_0:           Maximum number of iterations
-# tol:           Maximum tolerated error
-
-# Output
-# Approximate solution p or message of failure.
-
 function r = mullers(f, n_0, tol, p_0, p_1, p_2)
 	h_1 = p_1 - p_0;
 	h_2 = p_2 - p_1;

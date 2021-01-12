@@ -1,14 +1,3 @@
-# Fixed-POINT METHOD
-
-# Input
-# g(p): Function to use
-# p_0:  Initial approximation
-# n:    Maximum number of iterations
-# tol:  Maximum tolerated error
-
-# Output
-# Approximate solution p or message of failure.
-
 function r = fixedpoint(g, p_0, n, tol)
 	i = 1;
 	while i < n

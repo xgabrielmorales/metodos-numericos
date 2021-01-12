@@ -1,13 +1,3 @@
-# Composite Simpson's Rule
-
-# Input
-# f:    Function to use
-# a, b: Intervals in which the function is defined
-# n:    Number of intervals
-
-# Output
-# Approximation XI to I
-
 function XI = simpsions(f, a, b, n)
 	h = (b - a) / n;
 	XIO = f(a) + f(b);

@@ -1,14 +1,3 @@
-# STEFFENSEN'S METHOD
-
-# Input
-# g(p): Function to use
-# p:    Initial approximations
-# n:    Maximum number of iterations
-# tol:  Maximum tolerated error
-
-# Output
-# Approximate solution p or message of failure.
-
 function r = steffensen(g, p_0, n, tol)
 	p_1 = 0;
 	p_2 = 0;
