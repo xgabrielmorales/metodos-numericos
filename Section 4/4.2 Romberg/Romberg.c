@@ -19,8 +19,8 @@ void Romberg(double a, double b, int n){
 
 	printf("R_{1, 1} = %lf\n", R[1][1]);
 
-	double sum;
-	for(int i=2; i<n+1; i++){
+	for(int i=2; i<=n; i++){
+		double sum = 0;
 		for(int j=1; j<=(pow(2,i-2)); j++)
 			sum += f(a + (j - 0.5)*h);
 
