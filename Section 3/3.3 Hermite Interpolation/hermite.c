@@ -38,11 +38,11 @@ double *Hermite(int n, double *x, double *f, double *fp){
 }
 
 int main(){
+	/* === INSERT DATA HERE === */
 	int n;
 	double *x;
 	double *f;
 	double *fp;
-	/* === INSERT DATA HERE === */
 
 	/* === CALCULATE === */
 	double *r = Hermite(n, x, f, fp);

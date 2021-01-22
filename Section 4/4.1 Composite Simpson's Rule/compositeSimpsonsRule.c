@@ -3,7 +3,7 @@
 
 double f(double x){
 	/* === DEFINE THE FUCTION TO USE ===*/
-	return pow(x, 2) * (1 - pow(sin(3*x), 2));
+	return 0;
 }
 
 double simpsions(double a, double b, int n){
@@ -29,9 +29,9 @@ double simpsions(double a, double b, int n){
 }
 
 int main(){
+	/* === INSERT DATA HERE === */
 	int n;
 	double a, b;
-	/* === INSERT DATA HERE === */
 
 	/* === CALCULATE === */
 	double r = simpsions(a, b, n);

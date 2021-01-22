@@ -8,11 +8,6 @@ double **DividedDifference(int n, double *xr, double *f){
 	for(int i=0; i<n+1; i++)
 		F[i] = malloc((n+1) * sizeof(double));
 
-	if(!F){
-		printf("No se pudo reservar memoria para hacer los calculos.\n");
-		exit(0);
-	}
-
 	for(int i=0; i<=n; i++)
 		F[i][0] = f[i];
 
@@ -24,9 +19,9 @@ double **DividedDifference(int n, double *xr, double *f){
 }
 
 int main(){
+	/* === INSERT DATA HERE === */
 	int n;
 	double *xr, *f;
-	/* === INSERT DATA HERE === */
 
 	/* === CALCULATE === */
 	double **r = DividedDifference(n, xr, f);

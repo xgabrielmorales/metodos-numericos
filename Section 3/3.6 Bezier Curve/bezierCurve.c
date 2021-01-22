@@ -7,15 +7,15 @@ void bezierCurve(
 		double *xPlus,  double *yPlus,
 		double *xMinus, double *yMinus
 ){
-	double *a_0 = malloc((n) * sizeof(double));
-	double *a_1 = malloc((n) * sizeof(double));
-	double *a_2 = malloc((n) * sizeof(double));
-	double *a_3 = malloc((n) * sizeof(double));
+	double *a_0 = malloc(n * sizeof(double));
+	double *a_1 = malloc(n * sizeof(double));
+	double *a_2 = malloc(n * sizeof(double));
+	double *a_3 = malloc(n * sizeof(double));
 
-	double *b_0 = malloc((n) * sizeof(double));
-	double *b_1 = malloc((n) * sizeof(double));
-	double *b_2 = malloc((n) * sizeof(double));
-	double *b_3 = malloc((n) * sizeof(double));
+	double *b_0 = malloc(n * sizeof(double));
+	double *b_1 = malloc(n * sizeof(double));
+	double *b_2 = malloc(n * sizeof(double));
+	double *b_3 = malloc(n * sizeof(double));
 
 	for (int i=0; i<=n-1; i++){
 		a_0[i] = x[i];

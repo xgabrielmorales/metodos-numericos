@@ -66,5 +66,5 @@ int main(){
 	naturalCubicSpline(n, x, a);
 
 	/* === EXIT === */
-	return (0);
+	return 0;
 }

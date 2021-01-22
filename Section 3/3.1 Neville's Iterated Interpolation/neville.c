@@ -8,11 +8,6 @@ void Neville(int n, double x, double *xr, double *f){
 	for(int i=0; i<n+1; i++)
 		Q[i] = malloc((n+1) * sizeof(double));
 
-	if(!Q){
-		printf("No se pudo asignar la memoria.\n");
-		exit(0);
-	}
-
 	for (int i=0;i<=n;i++){
 		Q[i][0]=f[i];
 	}
@@ -34,7 +29,7 @@ void Neville(int n, double x, double *xr, double *f){
 
 int main(){
 	/* === INSERT DATA HERE === */
-	int n = 4;
+	int n;
 	double x;
 	double *xr, *f;
 
