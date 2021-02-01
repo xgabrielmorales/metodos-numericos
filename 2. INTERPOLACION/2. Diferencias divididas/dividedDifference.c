@@ -1,12 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-double **DividedDifference(int n, double *xr, double *f){
-	double **F;
-
-	F = malloc(sizeof(double) * (n+1));
-	for(int i=0; i<n+1; i++)
-		F[i] = malloc((n+1) * sizeof(double));
+void DividedDifference(int n, double *xr, double *f){
+	double F[n+1][n+1];
 
 	for(int i=0; i<=n; i++)
 		F[i][0] = f[i];
@@ -15,24 +10,21 @@ double **DividedDifference(int n, double *xr, double *f){
 		for(int j=1; j<=n; j++)
 			F[i][j] = (F[i][j-1] - F[i-1][j-1]) / (xr[i] - xr[i-j]);
 
-	return F;
+	for(int i=0; i<=n; i++)
+		printf("F_{%d, %d} = %lf\n", i, i, F[i][i]);
+
+	return;
 }
 
 int main(){
 	/* === INSERT DATA HERE === */
 	int n;
-	double *xr, *f;
+	double xr[] = {};
+	double f[] = {};
 
 	/* === CALCULATE === */
-	double **r = DividedDifference(n, xr, f);
-	for(int i=0; i<=n; i++)
-		printf("F_{%d, %d} = %lf\n", i, i, r[i][i]);
+	DividedDifference(n, xr, f);
 
 	/* === EXIT === */
-	while(n+1) free(r[--n+1]);
-	free(r);
-	free(xr);
-	free(f);
-
 	return 0;
 }

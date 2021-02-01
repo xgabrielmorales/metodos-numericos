@@ -1,15 +1,14 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 void campledCubicSpline(int n, double *x, double *a, double FPO, double FPN){
-	double *h   = malloc((n)   * sizeof(double));
-	double *alp = malloc((n+1) * sizeof(double));
-	double *l   = malloc((n+1) * sizeof(double));
-	double *m   = malloc((n+1) * sizeof(double));
-	double *z   = malloc((n+1) * sizeof(double));
-	double *c   = malloc((n+1) * sizeof(double));
-	double *d   = malloc((n)   * sizeof(double));
-	double *b   = malloc((n)   * sizeof(double));
+	double h[n];
+	double alp[n+1];
+	double l[n+1];
+	double m[n+1];
+	double z[n+1];
+	double c[n+1];
+	double d[n];
+	double b[n];
 
 	for (int i=0; i<=n-1; i++)
 		h[i] = x[i+1] - x[i];
@@ -48,23 +47,14 @@ void campledCubicSpline(int n, double *x, double *a, double FPO, double FPN){
 		printf("\n");
 	}
 
-	free(h);
-	free(alp);
-	free(l);
-	free(m);
-	free(z);
-	free(c);
-	free(d);
-	free(b);
-
 	return;
 }
 
 int main(){
 	/* === INSERT DATA HERE === */
 	int n;
-	double *x;
-	double *a;
+	double x[] = {};
+	double a[] = {};
 	double FPO;
 	double FPN;
 

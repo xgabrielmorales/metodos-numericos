@@ -1,12 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 void Neville(int n, double x, double *xr, double *f){
-	double **Q;
-
-	Q = malloc((n+1) * sizeof(double *));
-	for(int i=0; i<n+1; i++)
-		Q[i] = malloc((n+1) * sizeof(double));
+	double Q[n+1][n+1];
 
 	for (int i=0;i<=n;i++){
 		Q[i][0]=f[i];
@@ -22,16 +17,14 @@ void Neville(int n, double x, double *xr, double *f){
 		}
 		printf("\n");
 	}
-
-	while(n+1) free(Q[--n+1]);
-	free(Q);
 }
 
 int main(){
 	/* === INSERT DATA HERE === */
 	int n;
 	double x;
-	double *xr, *f;
+	double xr[] = {};
+	double f[] = {};
 
 	/* === CALCULATE === */
 	Neville(n, x, xr, f);

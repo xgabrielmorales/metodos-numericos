@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 void bezierCurve(
 		int n,
@@ -7,15 +6,15 @@ void bezierCurve(
 		double *xPlus,  double *yPlus,
 		double *xMinus, double *yMinus
 ){
-	double *a_0 = malloc(n * sizeof(double));
-	double *a_1 = malloc(n * sizeof(double));
-	double *a_2 = malloc(n * sizeof(double));
-	double *a_3 = malloc(n * sizeof(double));
+	double a_0[n];
+	double a_1[n];
+	double a_2[n];
+	double a_3[n];
 
-	double *b_0 = malloc(n * sizeof(double));
-	double *b_1 = malloc(n * sizeof(double));
-	double *b_2 = malloc(n * sizeof(double));
-	double *b_3 = malloc(n * sizeof(double));
+	double b_0[n];
+	double b_1[n];
+	double b_2[n];
+	double b_3[n];
 
 	for (int i=0; i<=n-1; i++){
 		a_0[i] = x[i];
@@ -37,26 +36,16 @@ void bezierCurve(
 		printf("%g\t %g\t %g\t %g\n\n", b_0[i], b_1[i], b_2[i], b_3[i]);
 	}
 
-	free(a_0);
-	free(a_1);
-	free(a_2);
-	free(a_3);
-
-	free(b_0);
-	free(b_1);
-	free(b_2);
-	free(b_3);
-
 	return;
 }
 
 
 int main(){
 	/* === INSERT DATA HERE === */
-	int n;
-	double *x,      *y;
-	double *xPlus,  *yPlus;
-	double *xMinus, *yMinus;
+	int n = 2;
+	double x[] = {0, 3, 5}, y[] = {0, 2, 1};
+	double xPlus[] = {-1, 2}, yPlus[] = {1, -2};
+	double xMinus[] = {3, 5}, yMinus[] = {4, 4};
 
 	/* === CALCULATE === */
 	bezierCurve(

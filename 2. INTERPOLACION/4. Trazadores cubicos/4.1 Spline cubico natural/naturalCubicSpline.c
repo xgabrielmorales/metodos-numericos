@@ -1,15 +1,14 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 void naturalCubicSpline(int n, double *x, double *a){
-	double *h   = malloc((n)   * sizeof(double));
-	double *alp = malloc((n)   * sizeof(double));
-	double *l   = malloc((n+1) * sizeof(double));
-	double *m   = malloc((n+1) * sizeof(double));
-	double *z   = malloc((n+1) * sizeof(double));
-	double *c   = malloc((n+1) * sizeof(double));
-	double *d   = malloc((n)   * sizeof(double));
-	double *b   = malloc((n)   * sizeof(double));
+	double h[n];
+	double alp[n];
+	double l[n];
+	double m[n+1];
+	double z[n+1];
+	double c[n+1];
+	double d[n];
+	double b[n];
 
 	for (int i=0; i<=n-1; i++)
 		h[i] = x[i+1] - x[i];
@@ -44,23 +43,14 @@ void naturalCubicSpline(int n, double *x, double *a){
 		printf("d_{%d} = %lf\t", j, d[j]);
 		printf("\n");
 	}
-
-	free(alp);
-	free(b);
-	free(c);
-	free(d);
-	free(h);
-	free(l);
-	free(m);
-	free(z);
 }
 
 int main(){
 
 	/* === INSERT DATA HERE === */
 	int n;
-	double *x;
-	double *a;
+	double x[] = {};
+	double a[] = {};
 
 	/* === CALCULATE === */
 	naturalCubicSpline(n, x, a);
