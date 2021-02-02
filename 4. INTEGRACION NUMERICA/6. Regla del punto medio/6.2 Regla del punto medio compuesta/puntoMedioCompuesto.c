@@ -3,7 +3,7 @@
 
 double f(double x){
 	/* === DEFINE THE FUCTION TO USE ===*/
-	return (0.5) * exp(x*x);
+	return 0;
 }
 
 double puntoMedioCompuesto(double a, double b, int n){
@@ -24,8 +24,8 @@ double puntoMedioCompuesto(double a, double b, int n){
 
 int main(){
 	/* === INSERT DATA HERE === */
-	int n = 4;
-	double a = 0, b = 1;
+	int n;
+	double a, b;
 
 	/* === CALCULATE === */
 	double r = puntoMedioCompuesto(a, b, n);
