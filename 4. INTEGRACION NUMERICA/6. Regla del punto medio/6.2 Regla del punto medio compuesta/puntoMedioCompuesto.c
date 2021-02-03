@@ -12,13 +12,10 @@ double puntoMedioCompuesto(double a, double b, int n){
 
 	for(int i=1; i<n; i+=2){
 		X = a + i*h;
-		printf("%lf\n", X);
 		XI0 += f(X);
 	}
 
 	double XI = 2 * h * XI0;
-
-	printf("\n");
 	return XI;
 }
 

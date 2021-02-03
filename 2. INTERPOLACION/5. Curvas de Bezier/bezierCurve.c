@@ -42,10 +42,10 @@ void bezierCurve(
 
 int main(){
 	/* === INSERT DATA HERE === */
-	int n = 2;
-	double x[] = {0, 3, 5}, y[] = {0, 2, 1};
-	double xPlus[] = {-1, 2}, yPlus[] = {1, -2};
-	double xMinus[] = {3, 5}, yMinus[] = {4, 4};
+	int n;
+	double x[] = {}, y[] = {};
+	double xPlus[] = {}, yPlus[] = {};
+	double xMinus[] = {}, yMinus[] = {};
 
 	/* === CALCULATE === */
 	bezierCurve(

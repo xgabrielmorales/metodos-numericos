@@ -22,9 +22,9 @@ int main(){
 	/* === INSERT DATA HERE === */
 
 	// Polynomial: 2x^4 - 3x^2 + 3x^1 - 4
-	int a[] = {-4, 3, -3, 0, 2};
-	int x_0 = -2;
-	int n = 4;
+	int a[] = {};
+	int x_0;
+	int n;
 
 	/* === CALCULATE === */
 	int *p = Horner(n, a, x_0);
